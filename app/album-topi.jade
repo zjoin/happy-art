@@ -1,0 +1,45 @@
+extends layout/layout
+block content   
+    div.container
+        include menu 
+        section.content
+            include form
+            a(href='')
+                h1.logo-in-gallery.into-gallery GHappy art
+                
+            div 
+                a.back-albums(href='gallery.html') назад к альбомам
+                    i.fa.fa-caret-left
+            ul(data-liffect='zoomOut', class='thumb-gallery') 
+               div.box-items
+                   i.fa.fa-search
+                   a.fluidbox(href='/images/item2.jpg', width='800')                        
+                        img(src='/images/item2.jpg', width='300')
+                   section.item-price
+                       span Цена
+                       span.number-price 3600 руб.
+                       img.cart.cart-price(src='/images/cart.svg', width='20', height='20')
+               div       
+                   a.fluidbox(href='/images/item1.jpg', width='800')
+                        img(src='/images/item1.jpg', width='300')
+                   section
+                       p Цена
+               div       
+                   a.fluidbox(href='/images/item3.jpg', width='800')
+                        img(src='/images/item3.jpg', width='300')
+               div                                                   
+                   a.fluidbox(href='/images/item4.jpg', width='800')
+                        img(src='/images/item4.jpg', width='300')
+                      
+             
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                  
+      

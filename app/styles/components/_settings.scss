@@ -1,0 +1,42 @@
+
+//$spacing: 22px;
+//$max-page-width: 1280px;
+//$radius-base: 8px;
+//$radius-large: $radius-base * 1.75;
+//$radius-small: $radius-base / 2;
+//
+//
+//$time-slow: .5s;
+//$time-fast: .1s;
+
+@import url(http://fonts.googleapis.com/css?family=Philosopher:400,700&subset=latin,cyrillic);
+@font-face {
+	font-family: 'fontleroybrownregular';
+	src: url('/fonts/happyfont-webfont-webfont.eot');
+	src: url('/fonts/happyfont-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+	url('/fonts/happyfont-webfont-webfont.woff') format('woff'),
+	url('/fonts/happyfont-webfont-webfont.ttf') format('truetype'),
+	url('/fonts/happyfont-webfont-webfont.svg#fontleroybrownregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+a{
+    text-decoration: none;
+}
+a:link {
+    color: #54403F;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+html,body {
+	height: 100%;
+}

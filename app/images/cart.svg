@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64">
+
+<g id="icomoon-ignore">
+	<line stroke-width="1" x1="" y1="" x2="" y2="" stroke="#449FDB" opacity=""></line>
+</g>
+	<path d="M52.951 36c2.2 0 4.495-1.731 5.099-3.846l5.802-20.308c0.604-2.115-0.701-3.846-2.901-3.846h-40.951c0-4.418-3.582-8-8-8h-12v8h12v34c0 3.314 2.686 6 6 6h38c2.209 0 4-1.791 4-4s-1.791-4-4-4h-36v-4h32.951zM20 16h36.175l-3.429 12h-32.747v-12zM24 59c0 2.75-2.25 5-5 5h-2c-2.75 0-5-2.25-5-5v-2c0-2.75 2.25-5 5-5h2c2.75 0 5 2.25 5 5v2zM60 59c0 2.75-2.25 5-5 5h-2c-2.75 0-5-2.25-5-5v-2c0-2.75 2.25-5 5-5h2c2.75 0 5 2.25 5 5v2z"  class="i-cart cart-price" >
+	    <style>
+	        .i-cart {
+	           fill: #54403F;
+	        }
+	        .i-cart:hover {
+	            fill: #f6e9e0;
+	        }
+	        .i-cart .cart-price {
+	            fill: #78b3a0;
+	        }
+	    </style>
+	</path>
+</svg>

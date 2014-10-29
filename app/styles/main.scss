@@ -1,1 +1,758 @@
 @import 'components/_normalize';
+@import 'components/_settings';
+//@import 'components/_animsition';
+//@import 'components/_fluidbox';
+
+
+
+$beige :     	#f6e9e0;
+$tur : 	#78b3a0;
+$brown :     	#54403F;
+$white :     	#ffffff;
+
+
+body {
+	background: $beige url(/images/green_dust_scratch.png);
+    color: $brown;
+    line-height: 1.5;
+    font-size: 1.4rem;
+    background-attachment: fixed;
+}
+
+.container {
+	display: flex;
+    flex-direction: row;
+	min-height: 100%;   
+	max-width: 1920px;
+	margin: auto;    
+    
+}
+
+.menu {
+	width: 200px;	
+	background: $tur;	
+	min-width: 288px;
+//	z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+	padding-bottom: 40px;
+    position: fixed;
+    min-height: 100%;
+}
+
+.basket {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 0 0;
+    flex-wrap: wrap;
+    position: relative;
+    & .checkout {  
+        margin: auto;
+        position: relative;
+        left: 30px;
+        top: -20px;
+        z-index: -1;
+        transition: all .3s ease-in-out;
+    } 
+    &:hover .checkout {
+        top: 10px;
+    }
+}
+
+.basket-counter {
+    background: $brown;
+    color: $beige;
+    padding: 10px 70px;  
+    cursor: pointer;
+    &:hover span {
+        color: $tur;
+    }    
+}
+
+.cart {
+    align-self: center;
+    cursor: pointer;  
+}
+
+/***********************************************\
+
+Modal basket settings
+
+\***********************************************/
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  max-width: 940px;
+  min-width: 320px;
+  height: auto;
+  z-index: 2000;
+  visibility: hidden;
+  backface-visibility: hidden; 
+  transform: translate(-50%, -50%);
+}
+.modal.modal-show {
+  visibility: visible;
+}
+.lt-ie9 .modal {
+  top: 0;
+  margin-left: -315px;
+}
+
+.modal-content {
+  background: white;
+  position: relative;
+  margin: 0 auto;
+  padding: 10px 40px 40px 40px;    
+//  border-radius: 3px;
+    & .form-close {
+        font-size: 2.5em;
+        position: absolute;
+        top: 0;
+        right: -50px;
+        color: $beige;
+        cursor: pointer;
+    }
+    & h2 {
+        margin-bottom: 40px;
+        font-size: 24px;
+    }
+    
+}
+
+.modal-overlay {
+  background: black;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0; 
+  transition-property: visibility, opacity; 
+  transition-delay: 0.5s, 0.1s;  
+  transition-duration: 0, 0.5s;
+}
+.modal-show .modal-overlay {
+  visibility: visible;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;  
+  transition: opacity 0.5s;
+}
+
+.modal[data-modal-effect=fadescale] .modal-content {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;  
+  transform: scale(0.7, 0.7);  
+  transition: all 0.5s ease-in-out;
+}
+.modal[data-modal-effect=fadescale].modal-show .modal-content {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+
+/***********************************************\
+
+Вasket list settings
+
+\***********************************************/
+
+.basket-list {
+    text-align: left;
+    position: relative;
+    & table {
+        width: 100%;
+        font-size: 1.4em;
+        & input {
+            padding: 1em;
+        }        
+        & tr:first-child th {
+            padding-bottom: 10px;
+        }
+    }
+    & img {
+//        float: left;
+//        margin-right: 20px;
+    }
+    & p {
+        margin: 0;
+    }
+    & td {
+        vertical-align: top;
+    }
+    & .total {
+        text-align: right;
+        & span {
+            color: $beige;
+            background: $brown;
+            padding: .6em 2em;            
+        }
+        & em {
+            font-style: normal;
+            margin: 0 5px 0 10px;
+        }
+    }
+    & th, tr {
+        text-align: center;
+        width: 25%;
+    }
+}
+
+
+nav {
+    flex: 1;
+    margin-top: 210px;
+}
+
+nav ul {
+    padding: 0;
+}
+
+nav li {
+	list-style: none;
+	line-height: 3em;
+	& a {
+		text-decoration: none;	
+		font-size: 24px;
+		
+	}
+    span {
+        font-size: 16px;
+        margin-left: 20px;
+        background: $brown;
+        color: $beige;
+        padding: 5px 33px;
+        vertical-align: top;        
+        font-family: 'Philosopher', sans-serif;
+    }
+}
+
+.test {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 55px;
+    display: none;
+    z-index: 999999999;
+}
+
+nav a:before {
+	content: attr(data-hover);
+	position: absolute;
+	color: $white;
+	transition: .3s cubic-bezier(0, 0, .07, .97);
+}
+
+nav a.qaz[data-hover]:before {
+    color: $brown;
+}
+
+nav a:hover,
+nav a:visited { 
+	color: $brown;
+}
+		
+nav	a:hover:before,
+nav	a:focus:before {
+	transform: scale(0.9);
+	opacity: 0;	
+}
+
+.fa.fa-navicon {
+    font-size: 2em;
+    position: absolute;
+    left: -5px;
+    top: 10px;
+    display: none;
+}
+
+.content {
+	width: 200px;	
+	background: $beige;
+	flex: 4;
+	border-right: 40px solid $tur;
+    position: relative;
+	overflow: hidden;
+    text-align: center;
+    margin-left: 288px;
+}
+
+video {
+	 position: absolute;
+     top: 0px;
+     left: 0px;
+     min-width: 100%;
+     min-height: 100%;
+     width: auto;
+     height: auto;
+//     z-index: -1000;
+     overflow: hidden;  
+}
+
+.fa-volume-down {
+    position: absolute;
+    top: 0;
+    right: 16px;
+    font-size: 50px;
+}
+
+
+h1 {
+	font-family: 'fontleroybrownregular';
+	font-weight: 100;
+	font-size: 14em;
+	color: $brown;
+	display: inline-block;
+	margin: 0;
+	z-index: 1;
+	position: relative;
+    margin-top: 40px;   
+    transition: 1s cubic-bezier(.92, -0.08, .3, 1.25);
+}
+
+.logo-in-gallery {
+    font-size: 8em;
+    margin: -25px 0;
+    margin-top: -35px;
+    
+}
+
+.logo-in-gallery.into-gallery {
+    margin-bottom: 0;
+}
+
+blockquote {
+    position: relative;
+    bottom: -260px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    font-family: 'fontleroybrownregular';
+    color: $beige;
+    font-size: 54px;
+    margin: 0;
+    padding: 0 20px;
+}
+
+address {
+    font-style: normal;
+    margin-bottom: 20px;
+    & span {
+        font-weight: 700;
+    }
+}
+
+
+.subcribe {
+    background: $brown;
+    text-align: center;
+    color: $beige;
+    margin: 20px 0;
+    & p {
+        margin: 10px 0;
+    }
+	
+}
+
+
+.social-icons { 	
+    display: flex;	
+    justify-content: space-between;    
+    z-index: 1;
+    & a {
+        color: $brown;
+//        transition: all .3s;
+    & i {
+        transition: all .3s;
+    }        
+        &:hover {
+            color: $beige;
+        }
+    }
+}
+
+.box-apps {
+    border-left: 2px solid;
+    padding-left: 10px;
+    & a:first-child {
+        margin-right: 10px;
+    }
+}
+
+
+
+ul[data-liffect="zoomOut"] {
+    padding: 0px 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    padding: 0 140px;
+    & li {
+        list-style: none;
+//        margin: 0 20px 13px 0;
+    }
+    & li:nth-child(3n+3) {
+        margin-right: 0;
+    }
+    & img {
+        position: relative;
+        display: block;      
+        cursor: pointer;
+    }   
+}
+
+
+figcaption {
+    background: white; 
+    padding: 3px 10px;
+    display: flex;
+    justify-content: space-between;
+    transition: .5s ease-in-out;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translate3d(0,200%,0);
+    z-index: 2;
+    & .icons {
+        display: flex;
+        align-items: center;
+        color: $brown;
+        & i {
+            margin-left: 15px;
+            color: $tur;
+        }
+    }
+     & h2 {
+          font-family: 'Philosopher', sans-serif;
+          font-size: 1.6em;
+          margin: 0;
+          font-weight: 700;
+          color: $brown;
+    }
+    & p {
+        position: absolute;
+        top: -205px;
+        left: 0;
+        width: 100%;
+        opacity: 0;        
+        color: $beige;
+        font-size: 24px;
+        z-index: 2;
+        font-family: 'Philosopher', sans-serif;
+    }
+}
+
+figcaption i,
+figcaption h2,
+figcaption p{
+    transition: all .4s;  
+    transform: translate3d(0,200%,0);  
+}
+
+ul[data-liffect="zoomOut"] li:hover p {
+    opacity: 1;
+}
+
+ul[data-liffect="zoomOut"] li::before {
+   content: '';    
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;        
+   background: linear-gradient(to bottom right,#002f4b,#dc4225);
+//    background: #fff;
+   transition: .4s ease-in-out;
+   opacity: 0;    
+}
+
+ul[data-liffect="zoomOut"] li:hover::before {
+    z-index: 1;
+    opacity: .2;
+}
+
+ul[data-liffect="zoomOut"] li:hover figcaption {   
+	transform: translate3d(0,0,0);
+}
+
+ul[data-liffect="zoomOut"] li:hover h2 {   
+	transition-delay: 0.2s;
+    transform: translate3d(0,0,0);
+}
+
+ul[data-liffect="zoomOut"] li:hover figcaption .icons i:first-child {
+	transition-delay: 0.3s;
+    transform: translate3d(0,0,0);
+    
+}
+
+ul[data-liffect="zoomOut"] li:hover figcaption .icons i:last-child {	
+	transition-delay: .4s;
+    transform: translate3d(0,0,0);
+}
+
+ul[data-liffect="zoomOut"] li {
+    opacity: 0;
+    position: relative;    
+    animation: zoomOut 600ms ease both;
+    animation-play-state: paused;
+    overflow: hidden;
+    z-index: 5;
+    margin-bottom: 40px;
+}
+
+ul[data-liffect="zoomOut"].play li {    
+    animation-play-state: running;
+}
+
+
+@keyframes zoomOut {
+    0% { opacity: 0; transform: scale(.6); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.thumb-gallery.play li {
+    overflow: visible;   
+}
+
+
+
+.back-albums {
+    background: $brown;    
+    color: $beige;
+    padding: 10px 20px 10px 30px;
+    display: inline-block;
+    margin-top: 2px;
+    transition: .7s cubic-bezier(0, .61, .2, 1.33);
+    font-family: 'Philosopher', sans-serif;
+    position: relative;
+    &:hover {
+        background: $tur;
+//        color: $brown;
+    }
+    & .fa-caret-left {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        margin: 0 0 0 10px;
+        font-size: 1.7em;
+    }
+}
+
+
+.box-items {
+    position: relative;
+}
+
+.item-price {
+    padding: 5px 10px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    & .number-price {
+        margin-left: -128px;
+    }
+}
+
+.fa.fa-search {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 55555;
+    transform: translate(-50%,-50%);
+    margin: -10px 0 0 10px;
+    font-size: 3em;
+    display: none;
+} 
+
+
+@media all and (max-height: 500px) {
+    .social-icons {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 1440px) {
+    .modal {
+        width: 100%;
+    }   
+}
+
+@media screen and (max-width: 1140px) {
+    .container {       
+        flex-direction: column;
+    }  
+  
+    .menu, .content {
+        width: 100%;
+    }
+    
+    .menu {
+        height: 50px;
+        position: static;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    
+    .modal {
+        width: 100%;
+    }
+    
+    .modal-overlay {
+        background: white;        
+    }
+    
+    .modal-show .modal-overlay {
+        opacity: 1;
+    }
+    
+    .modal-content .form-close {
+        color: $brown;
+        left: 80%;
+    }
+    
+    nav {
+        margin-top: 0;
+    }
+    
+    nav ul {
+        display: flex;
+    }
+    
+    .content {
+        border-right: none;
+        margin-left: 0;
+    }
+    
+    h1 {
+        font-size: 11em;
+        margin-top: 0;
+    }
+    
+    .social-icons {
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        margin: 20px 0;
+        & a {
+            margin-right: 20px;
+        }
+    }
+    
+    nav {
+        position: absolute;
+        top: 0;
+        left: 20px;
+    }
+    
+    nav ul {
+        margin: 0;
+    }
+    
+    nav li {
+        margin-right: 20px;
+    }
+    
+    .basket {
+        margin: 0;
+        align-self: flex-start;
+        margin-top: 7px;        
+    }
+    
+    .basket-counter {
+        margin-left: 20px;
+        padding: 5px 40px;       
+    }
+    
+    address, .subcribe {
+        display: none;
+    }
+    .checkout {
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 767px) {
+    h1 {
+        font-size: 8em;
+    }
+    nav  {
+        display: none;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50px, -50px);
+        z-index: 5;       
+     }
+    
+    nav a:before {
+        color: $brown;
+    }
+    
+    nav ul {
+        flex-direction: column;    
+    }
+    
+    .fa.fa-navicon {
+        display: block;
+        cursor: pointer;        
+    }    
+}
+
+@media screen and (max-width: 423px) {
+    h1 {
+        font-size: 6em;
+    }
+}
+
+@media screen and (max-height: 900px) {
+    blockquote {
+        bottom: -100px;
+    }
+}
+
+
+//.menu-overlay {
+//    position: fixed;
+//    top: 0;
+//    left: 0;
+//    width: 100%;
+//    height: 100%;
+//    background-color: $beige;
+//    z-index: 9;
+//    transition: all .3s;
+//}
+
+.qaz {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: $beige;
+    z-index: 5; 
+    display: none;
+}
+
+.opac {
+    opacity: .1;
+}
+
+.m-close-menu {
+    font-size: 2em;
+    display: inline-block;
+    margin: 3px 0 0 3px;
+    cursor: pointer;
+   
+}
+
