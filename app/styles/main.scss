@@ -243,26 +243,36 @@ nav li {
     z-index: 999999999;
 }
 
-nav a:before {
-	content: attr(data-hover);
-	position: absolute;
-	color: $white;
-	transition: .3s cubic-bezier(0, 0, .07, .97);
+//nav a:before {
+//	content: attr(data-hover);
+//	position: absolute;
+//	color: $white;
+//	transition: .3s cubic-bezier(0, 0, .07, .97);
+//}
+//
+//nav a.qaz[data-hover]:before {
+//    color: $brown;
+//}
+//
+//nav a:hover,
+//nav a:visited { 
+//	color: $brown;
+//}
+//		
+//nav	a:hover:before,
+//nav	a:focus:before {
+//	transform: scale(0.9);
+//	opacity: 0;	
+//}
+
+.activ {
+    color: tomato;
 }
 
-nav a.qaz[data-hover]:before {
-    color: $brown;
-}
-
-nav a:hover,
-nav a:visited { 
-	color: $brown;
-}
-		
-nav	a:hover:before,
-nav	a:focus:before {
-	transform: scale(0.9);
-	opacity: 0;	
+.loading {
+    width: 150px;
+    height: 150px;
+    background: tomato;
 }
 
 .fa.fa-navicon {
