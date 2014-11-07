@@ -404,7 +404,7 @@ ul[data-liffect="zoomOut"] {
     justify-content: space-around;
     flex-wrap: wrap;
     margin-top: 40px;
-    padding: 0 140px;
+//    padding: 0 140px;
     & li {
         list-style: none;
 //        margin: 0 20px 13px 0;
@@ -479,7 +479,6 @@ ul[data-liffect="zoomOut"] li::before {
    right: 0;
    left: 0;        
    background: linear-gradient(to bottom right,#002f4b,#dc4225);
-//    background: #fff;
    transition: .4s ease-in-out;
    opacity: 0;    
 }
@@ -510,13 +509,13 @@ ul[data-liffect="zoomOut"] li:hover figcaption .icons i:last-child {
 }
 
 ul[data-liffect="zoomOut"] li {
-    opacity: 0;
+//    opacity: 0;
     position: relative;    
-    animation: zoomOut 600ms ease both;
-    animation-play-state: paused;
+//    animation: zoomOut 600ms ease both;
+//    animation-play-state: paused;
     overflow: hidden;
     z-index: 5;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 
 ul[data-liffect="zoomOut"].play li {    
@@ -594,7 +593,28 @@ ul[data-liffect="zoomOut"].play li {
 @media screen and (max-width: 1440px) {
     .modal {
         width: 100%;
-    }   
+    }
+    
+    ul[data-liffect="zoomOut"] {
+        padding: 0 80px;
+    } 
+    
+}
+
+@media screen and (max-width: 1366px) {      
+    ul[data-liffect="zoomOut"] {
+        padding: 0 60px;
+    }     
+}
+
+@media screen and (max-width: 1280px) {   
+    ul[data-liffect="zoomOut"] {
+        padding: 0 35px;
+    } 
+    
+    ul[data-liffect="zoomOut"] img {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 1140px) {
