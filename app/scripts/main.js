@@ -303,6 +303,18 @@ $('.m-close-menu').on('click', function() {
 //    $('.content').load(url).hide().fadeIn(500);
 //}
 
+$(document).ready(function() {
+    $(window).load(function() {
+         $('.loader').hide();
+         $('.container').show();
+    });
+});
+
+ $('nav a').on('click',function() {
+        $('.activ').removeClass('activ');
+        $(this).addClass('activ');
+    })
+
 
 
 

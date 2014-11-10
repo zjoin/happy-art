@@ -221,7 +221,7 @@ nav li {
 	& a {
 		text-decoration: none;	
 		font-size: 24px;
-		
+        color: $beige;		
 	}
     span {
         font-size: 16px;
@@ -232,6 +232,11 @@ nav li {
         vertical-align: top;        
         font-family: 'Philosopher', sans-serif;
     }
+}
+
+.activ {
+    color: $brown;
+    transform: scale(.9);
 }
 
 .test {
@@ -265,9 +270,7 @@ nav li {
 //	opacity: 0;	
 //}
 
-.activ {
-    color: tomato;
-}
+
 
 .loading {
     width: 150px;
@@ -403,15 +406,12 @@ ul[data-liffect="zoomOut"] {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 40px;
-//    padding: 0 140px;
+    margin-top: 40px;    
+    flex-flow: row wrap;  
+    display: flex;
     & li {
         list-style: none;
-//        margin: 0 20px 13px 0;
-    }
-    & li:nth-child(3n+3) {
-        margin-right: 0;
-    }
+    }   
     & img {
         position: relative;
         display: block;      
@@ -514,12 +514,19 @@ ul[data-liffect="zoomOut"] li {
 //    animation: zoomOut 600ms ease both;
 //    animation-play-state: paused;
     overflow: hidden;
-    z-index: 5;
-    margin-bottom: 25px;
+    z-index: 5;   
+    flex: auto; 
+    width: 350px; 
+    margin: 1vw; 
 }
 
 ul[data-liffect="zoomOut"].play li {    
     animation-play-state: running;
+}
+
+ul[data-liffect="zoomOut"] img {
+    width: 100%; 
+  height: auto; 
 }
 
 
@@ -595,26 +602,20 @@ ul[data-liffect="zoomOut"].play li {
         width: 100%;
     }
     
-    ul[data-liffect="zoomOut"] {
-        padding: 0 80px;
-    } 
+   
     
 }
 
 @media screen and (max-width: 1366px) {      
-    ul[data-liffect="zoomOut"] {
-        padding: 0 60px;
-    }     
+        
 }
 
 @media screen and (max-width: 1280px) {   
-    ul[data-liffect="zoomOut"] {
-        padding: 0 35px;
-    } 
+   
     
-    ul[data-liffect="zoomOut"] img {
-        width: 100%;
-    }
+//    ul[data-liffect="zoomOut"] img {
+//        width: 100%;
+//    }
 }
 
 @media screen and (max-width: 1140px) {
@@ -737,7 +738,9 @@ ul[data-liffect="zoomOut"].play li {
     .fa.fa-navicon {
         display: block;
         cursor: pointer;        
-    }    
+    } 
+    
+
 }
 
 @media screen and (max-width: 423px) {
@@ -749,7 +752,8 @@ ul[data-liffect="zoomOut"].play li {
 @media screen and (max-height: 900px) {
     blockquote {
         bottom: -100px;
-    }
+    }  
+
 }
 
 
