@@ -1045,7 +1045,7 @@ ul[data-liffect='zoomOut'] img
     cursor: pointer;
 }
 
-figcaption
+ul[data-liffect='zoomOut'] figcaption
 {
     position: absolute;
     z-index: 2; 
@@ -1072,7 +1072,7 @@ figcaption
     -ms-flex-pack: justify;
             justify-content: space-between;
 }
-figcaption .icons
+ul[data-liffect='zoomOut'] figcaption .icons
 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1086,13 +1086,13 @@ figcaption .icons
     -ms-flex-align: center;
             align-items: center;
 }
-figcaption .icons i
+ul[data-liffect='zoomOut'] figcaption .icons i
 {
     margin-left: 15px;
 
     color: #78b3a0;
 }
-figcaption h2
+ul[data-liffect='zoomOut'] figcaption h2
 {
     font-family: 'Philosopher', sans-serif;
     font-size: 1.6em;
@@ -1102,7 +1102,7 @@ figcaption h2
 
     color: #54403f;
 }
-figcaption p
+ul[data-liffect='zoomOut'] figcaption p
 {
     font-family: 'Philosopher', sans-serif; 
     font-size: 24px;
@@ -1363,6 +1363,22 @@ ul[data-liffect='zoomOut'] img
         -ms-transform: translate(-50%, -50%);
          -o-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
+}
+
+.we
+{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+            justify-content: space-around;
+}
+.we img
+{
+    width: 300px;
 }
 
 @media all and (max-height: 500px)
