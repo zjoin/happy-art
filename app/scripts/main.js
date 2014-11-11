@@ -254,29 +254,33 @@ $('.m-close-menu').on('click', function() {
 });
 
 
- $(document).ready(function() {   
+// $(document).ready(function() {   
+//
+//       $(function() {
+//
+//  var $pageContent = $('.content');
+//  
+//  var loadContent = function(url) {
+//    
+//    $pageContent.fadeOut(function() {
+//      $pageContent.load(url, function() {          
+//        $pageContent.fadeIn();
+//      });
+//    });    
+//  };  
+//
+//  
+//  $('nav li a').on('click', function(event) {    
+//       
+//    loadContent($(this).attr('href') + ' .content > *');      
+//       event.preventDefault();  
+//  });  
+//});  
+//
+//    });
 
-       $(function() {
 
-  var $pageContent = $('.content');
-  
-  var loadContent = function(url) {
-    
-    $pageContent.fadeOut(function() {
-      $pageContent.load(url, function() {          
-        $pageContent.fadeIn();
-      });
-    });    
-  };  
 
-  
-  $('nav li a').on('click', function(event) {    
-    event.preventDefault();  
-    loadContent($(this).attr('href') + ' .content > *');    
-  });  
-});
-
-    });
 
 // $(document).ready(function() {
 //$('a').on('click', function(){
@@ -303,12 +307,58 @@ $('.m-close-menu').on('click', function() {
 //    $('.content').load(url).hide().fadeIn(500);
 //}
 
-$(document).ready(function() {
-    $(window).load(function() {
-         $('.loader').hide();
-         $('.container').show();
+
+
+$('document').ready(function(){
+    $('a').on('click', function(e){      
+        // отменяем стандартное действие при клике
+        e.preventDefault();
+        // Получаем адрес страницы
+        var href = $(this).attr('href');
+        // Передаем адрес страницы в функцию
+        getContent(href, true);       
     });
 });
+
+// Добавляем обработчик события popstate, 
+// происходящего при нажатии на кнопку назад/вперед в браузере  
+window.addEventListener("popstate", function(e) {
+    // Передаем текущий URL
+    getContent(location.pathname, false);
+});
+
+// Функция загрузки контента
+function getContent(url, addEntry) {
+    $.get(url).done(function(data) {
+        // Обновление только текстового содержимого 
+        $('.content').hide().html($(data).find(".content").html()).fadeIn(800,'swing');
+       
+        // Если был выполнен клик в меню - добавляем запись в стек истории сеанса
+        // Если была нажата кнопка назад/вперед, добавлять записи в историю не надо
+        if(addEntry == true) {
+            // Добавляем запись в историю, используя pushState
+            history.pushState(null, null, url); 
+        }
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+//$(document).ready(function() {
+//    $(window).load(function() {        
+//         $('body')            
+//            .delay(1000)
+//            .fadeIn();
+//    });
+//});
 
  $('nav a').on('click',function() {
         $('.activ').removeClass('activ');
