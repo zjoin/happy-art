@@ -367,7 +367,9 @@ function getContent(url, addEntry) {
 
 
 
-
+Pace.on('hide', function() {
+   $('.pace-overlay').fadeOut();  
+});
 
 
 
