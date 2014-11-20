@@ -1,5 +1,7 @@
 ## Overview
 
+### ![For example this gallery](https://cdn.rawgit.com/hadalin/jquery-flickr-photoset/55c6594f3fb2b11d0ca826760a54baacd76a365a/index.html) 
+
 [Web Starter Kit](https://developers.google.com/web/starter-kit) is an opinionated boilerplate for web development. Tools for building a great experience [across many devices](https://google.github.io/web-starter-kit/hello-world/) and [performance oriented](#web-performance). Helping you to stay productive following the best practices outlined in Google's [Web Fundamentals](https://developers.google.com/web/fundamentals). A solid starting point for both professionals and newcomers to the industry.
 
 [![](https://cloud.githubusercontent.com/assets/170270/3343033/ceee251e-f899-11e3-9dd9-e313cf2522ec.png)](https://developers.google.com/web/starter-kit/ 'Features')

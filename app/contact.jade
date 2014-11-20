@@ -10,9 +10,30 @@ block content
                       
              
             form(action="")
-                div
-                    input(type='text', placeholder='hvjhvjhv')
-                       
+                section.contacts
+                    div
+                        input(
+                            type='text',
+                            name='name'
+                            placeholder='Имя'
+                            )
+                    div
+                        input(
+                            type="email",
+                            name="email",
+                            placeholder='E-mail'
+                            )
+                    div
+                        textarea(
+                            placeholder="написать сообщение"
+                            )
+                    div
+                        input(
+                            type="submit",
+                            name="submit",
+                            class="send"
+                            value="Отправить"
+                        )
                        
                        
                        
