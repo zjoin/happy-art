@@ -1,13 +1,13 @@
 @import 'components/_normalize';
 @import 'components/_settings';
 //@import 'components/_animsition';
-//@import 'components/_fluidbox';
+@import 'components/_fluidbox';
 @import 'components/_pace-theme-flash';
 
 
 
 $beige :     	#f6e9e0;
-$tur : 	#78b3a0;
+$tur : 	        #78b3a0;
 $brown :     	#54403F;
 $white :     	#ffffff;
 
@@ -257,29 +257,6 @@ nav li {
     z-index: 999999999;
 }
 
-//nav a:before {
-//	content: attr(data-hover);
-//	position: absolute;
-//	color: $white;
-//	transition: .3s cubic-bezier(0, 0, .07, .97);
-//}
-//
-//nav a.qaz[data-hover]:before {
-//    color: $brown;
-//}
-//
-//nav a:hover,
-//nav a:visited { 
-//	color: $brown;
-//}
-//		
-//nav	a:hover:before,
-//nav	a:focus:before {
-//	transform: scale(0.9);
-//	opacity: 0;	
-//}
-
-
 
 .loading {
     width: 150px;
@@ -413,7 +390,7 @@ address {
 ul[data-liffect="zoomOut"] {
     padding: 0px 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     margin-top: 40px;    
     flex-flow: row wrap;  
@@ -469,12 +446,7 @@ ul[data-liffect="zoomOut"] figcaption {
     }
 }
 
-figcaption i,
-figcaption h2,
-figcaption p{
-    transition: all .4s;  
-    transform: translate3d(0,200%,0);  
-}
+
 
 ul[data-liffect="zoomOut"] li:hover p {
     opacity: 1;
@@ -524,9 +496,10 @@ ul[data-liffect="zoomOut"] li {
 //    animation-play-state: paused;
     overflow: hidden;
     z-index: 5;   
-    flex: auto; 
+//    flex: auto; 
     width: 350px; 
-    margin: 1vw; 
+    margin: 1vw;
+    
 }
 
 ul[data-liffect="zoomOut"].play li {    
@@ -535,7 +508,7 @@ ul[data-liffect="zoomOut"].play li {
 
 ul[data-liffect="zoomOut"] img {
     width: 100%; 
-  height: auto; 
+//    height: auto; 
 }
 
 
@@ -546,6 +519,15 @@ ul[data-liffect="zoomOut"] img {
 
 .thumb-gallery.play li {
     overflow: visible;   
+}
+
+
+
+figcaption i,
+figcaption h2,
+figcaption p{
+    transition: all .4s;  
+    transform: translate3d(0,200%,0);  
 }
 
 
@@ -652,172 +634,6 @@ COMMENTS FORM
 
 
 
-@media all and (max-height: 500px) {
-    .social-icons {
-        display: none;
-    }
-}
-
-
-@media screen and (max-width: 1440px) {
-    .modal {
-        width: 100%;
-    }
-    
-   
-    
-}
-
-@media screen and (max-width: 1366px) {      
-        
-}
-
-@media screen and (max-width: 1280px) {   
-   
-    
-//    ul[data-liffect="zoomOut"] img {
-//        width: 100%;
-//    }
-}
-
-@media screen and (max-width: 1140px) {
-    .container {       
-        flex-direction: column;
-    }  
-  
-    .menu, .content {
-        width: 100%;
-    }
-    
-    .menu {
-        height: 50px;
-        position: static;
-        flex-direction: row;
-        justify-content: flex-end;
-    }
-    
-    .modal {
-        width: 100%;
-    }
-    
-    .modal-overlay {
-        background: white;        
-    }
-    
-    .modal-show .modal-overlay {
-        opacity: 1;
-    }
-    
-    .modal-content .form-close {
-        color: $brown;
-        left: 80%;
-    }
-    
-    nav {
-        margin-top: 0;
-    }
-    
-    nav ul {
-        display: flex;
-    }
-    
-    .content {
-        border-right: none;
-        margin-left: 0;
-    }
-    
-    h1 {
-        font-size: 11em;
-        margin-top: 0;
-    }
-    
-    .social-icons {
-        justify-content: center;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        margin: 20px 0;
-        & a {
-            margin-right: 20px;
-        }
-    }
-    
-    nav {
-        position: absolute;
-        top: 0;
-        left: 20px;
-    }
-    
-    nav ul {
-        margin: 0;
-    }
-    
-    nav li {
-        margin-right: 20px;
-    }
-    
-    .basket {
-        margin: 0;
-        align-self: flex-start;
-        margin-top: 7px;        
-    }
-    
-    .basket-counter {
-        margin-left: 20px;
-        padding: 5px 40px;       
-    }
-    
-    address, .subcribe {
-        display: none;
-    }
-    .checkout {
-        display: none;
-    }
-    
-}
-
-@media screen and (max-width: 767px) {
-    h1 {
-        font-size: 8em;
-    }
-    nav  {
-        display: none;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50px, -50px);
-        z-index: 5;       
-     }
-    
-    nav li a {
-        color: $brown;
-    }
-    
-    nav ul {
-        flex-direction: column;    
-    }
-    
-    .fa.fa-navicon {
-        display: block;
-        cursor: pointer;        
-    } 
-    
-
-}
-
-@media screen and (max-width: 423px) {
-    h1 {
-        font-size: 6em;
-    }
-}
-
-@media screen and (max-height: 900px) {
-    blockquote {
-        bottom: -100px;
-    }  
-
-}
-
 
 //.menu-overlay {
 //    position: fixed;
@@ -830,7 +646,7 @@ COMMENTS FORM
 //    transition: all .3s;
 //}
 
-.qaz {
+.toggle-menu {
     position: fixed;
     top: 0; left: 0;
     width: 100%;
@@ -851,4 +667,8 @@ COMMENTS FORM
     cursor: pointer;
    
 }
+
+
+
+@import 'components/media';
 

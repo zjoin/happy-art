@@ -1,3 +1,41 @@
+/***************************************\
+
+BLOCK MEDIA QUERIS
+
+\****************************************/
+
+
+@media all and (max-height: 500px) {
+    .social-icons {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 1440px) {
+    .modal {
+        width: 100%;
+    } 
+}
+
+@media screen and (max-width: 1465px) {
+    ul[data-liffect="zoomOut"] li {
+       width: 300px;
+   }
+}
+
+
+@media screen and (max-width: 1306px) {      
+     ul[data-liffect="zoomOut"] li {
+       width: 280px;
+   }   
+}
+
+@media screen and (max-width: 1242px) {  
+    ul[data-liffect="zoomOut"] li {
+       width: 240px;
+   } 
+}
 
 @media screen and (max-width: 1140px) {
     .container {       
@@ -13,6 +51,23 @@
         position: static;
         flex-direction: row;
         justify-content: flex-end;
+    }
+    
+    .modal {
+        width: 100%;
+    }
+    
+    .modal-overlay {
+        background: white;        
+    }
+    
+    .modal-show .modal-overlay {
+        opacity: 1;
+    }
+    
+    .modal-content .form-close {
+        color: $brown;
+        left: 80%;
     }
     
     nav {
@@ -39,6 +94,7 @@
         bottom: 0;
         left: 0;
         width: 100%;
+        margin: 20px 0;
         & a {
             margin-right: 20px;
         }
@@ -82,14 +138,53 @@
     h1 {
         font-size: 8em;
     }
-    nav {
+    nav  {
         display: none;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50px, -50px);
+        z-index: 5;       
+     }
+    
+    nav li a {
+        color: $brown;
     }
+    
+    nav ul {
+        flex-direction: column;    
+    }
+    
+    .fa.fa-navicon {
+        display: block;
+        cursor: pointer;        
+    } 
+    
+
 }
+
+
 
 @media screen and (max-height: 900px) {
     blockquote {
         bottom: -100px;
-    }
+    }  
+
 }
 
+@media screen and (max-width: 700px) {
+   ul[data-liffect="zoomOut"] li {
+       width: 250px;
+   } 
+
+}
+
+@media screen and (max-width: 423px) {
+    h1.logo-in-gallery {
+        font-size: 6rem;
+        padding-top: 30px;
+    }
+    
+     ul[data-liffect="zoomOut"] li {
+       width: 150px;
+   } 
+}
