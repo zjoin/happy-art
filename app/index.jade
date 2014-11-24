@@ -3,12 +3,13 @@ block content
     div.container.animsition
         div.loader 
              loader
-        div.toggle-menu
-            i.icon.ion-close.m-close-menu
+        div.toggle-menu           
         include menu
         section.content
             video(autoplay='autoplay', loop='loop', poster='' id='my-video')
                 source(src='/images/cloud.mp4', type='video/mp4')
+                source(src='/images/cloud.webm', type='video/webm')
+                source(src='/images/cloud.ogv', type='video/ogg')              
             a(href='')
                 h1(data-scroll-reveal='data-scroll-reveal="enter from the bottom after 1s') GHappy art
               

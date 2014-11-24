@@ -5,11 +5,6 @@ BLOCK MEDIA QUERIS
 \****************************************/
 
 
-@media all and (max-height: 500px) {
-    .social-icons {
-        display: none;
-    }
-}
 
 
 @media screen and (max-width: 1440px) {
@@ -33,7 +28,13 @@ BLOCK MEDIA QUERIS
 
 @media screen and (max-width: 1242px) {  
     ul[data-liffect="zoomOut"] li {
-       width: 240px;
+       width: 400px;
+   } 
+}
+
+@media screen and (max-width: 1174px) {  
+    ul[data-liffect="zoomOut"] li {
+       width: 380px;
    } 
 }
 
@@ -132,7 +133,53 @@ BLOCK MEDIA QUERIS
         display: none;
     }
     
+      ul[data-liffect="zoomOut"] li {
+       width: 320px;
+   }     
+    
 }
+
+
+
+@media screen and (max-width: 1150px) {
+    ul[data-liffect="zoomOut"] li {
+       width: 300px;
+   }     
+}
+
+
+@media screen and (max-width: 1000px) {
+    ul[data-liffect="zoomOut"] li {
+       width: 280px;
+   }     
+}
+
+@media screen and (max-width: 950px) {
+    ul[data-liffect="zoomOut"] li {
+       width: 260px;
+   }     
+}
+
+@media screen and (max-width: 880px) {
+    ul[data-liffect="zoomOut"] li {
+       width: 240px;
+   }     
+}
+
+
+@media screen and (max-width: 800px) {
+    ul[data-liffect="zoomOut"] li {
+       width: 225px;
+   }     
+}
+
+@media screen and (max-width: 750px) {
+    ul[data-liffect="zoomOut"] li {
+       width: 210px;
+   }     
+}
+
+
 
 @media screen and (max-width: 767px) {
     h1 {
@@ -142,12 +189,12 @@ BLOCK MEDIA QUERIS
         display: none;
         left: 50%;
         top: 50%;
-        transform: translate(-50px, -50px);
-        z-index: 5;       
+        transform: translate(-50%, -50%);
+        z-index: 10;       
      }
     
     nav li a {
-        color: $brown;
+        color: $beige !important;
     }
     
     nav ul {
@@ -157,9 +204,13 @@ BLOCK MEDIA QUERIS
     .fa.fa-navicon {
         display: block;
         cursor: pointer;        
-    } 
-    
+    }   
+}
 
+@media screen and (min-width: 767px) {
+    nav {
+    display: block !important;
+    }
 }
 
 
@@ -173,18 +224,74 @@ BLOCK MEDIA QUERIS
 
 @media screen and (max-width: 700px) {
    ul[data-liffect="zoomOut"] li {
-       width: 250px;
+       width: 300px;
    } 
 
 }
+
+@media screen and (max-width: 650px) {
+   ul[data-liffect="zoomOut"] li {
+       width: 180px;
+   } 
+
+}
+
+@media screen and (max-width: 600px) {
+   ul[data-liffect="zoomOut"] li {
+       width: 180px;
+       margin: 5vw;
+   } 
+
+}
+
+@media screen and (max-width: 480px) {
+   ul[data-liffect="zoomOut"] li {
+       width: 160px;
+       margin: 5vw;
+   }   
+   
+
+}
+
+@media screen and (max-width: 390px) {
+   ul[data-liffect="zoomOut"] li {
+       width: 130px;
+       margin: 5vw;
+   } 
+
+}
+
+@media screen and (max-width: 330px) {
+   ul[data-liffect="zoomOut"] li {
+       width: 100px;
+       margin: 5vw;
+   } 
+
+}
+
+
+
+@media all and (max-height: 500px) {
+    .social-icons {
+        display: none;
+    }
+}
+
+
 
 @media screen and (max-width: 423px) {
-    h1.logo-in-gallery {
-        font-size: 6rem;
+    h1.logo-in-gallery, h1 {
+        font-size: 7rem;
         padding-top: 30px;
-    }
+    } 
     
-     ul[data-liffect="zoomOut"] li {
-       width: 150px;
+     ul[data-liffect="zoomOut"]  {
+       margin-top: 15px;
    } 
+    
 }
+
+
+
+
+
