@@ -1,9 +1,7 @@
 'use strict';
+window.scrollReveal = new scrollReveal(); 
 
- window.scrollReveal = new scrollReveal();
-
- 
-
+// Появление галлереи
 $(document).ready(function () {
     $("ul[data-liffect] li").each(function (i) {
         $(this).attr("style", "-webkit-animation-delay:" + i * 300 + "ms;"
@@ -16,6 +14,8 @@ $(document).ready(function () {
     });
 });
 
+
+// Плавный скролл - требует замены
 var nice = false;
 $(document).ready(
     function() {
@@ -23,13 +23,12 @@ $(document).ready(
     }
 );
 
-
-// Defer pointer events on animated header
-$(window).load(function (){
-  $('header').css({
-    'pointer-events': 'auto'
-  });
-});
+//
+//$(window).load(function (){
+//  $('header').css({
+//    'pointer-events': 'auto'
+//  });
+//});
 
 
 
@@ -62,10 +61,10 @@ closeMenuNav.hide();
 
 
 
-
+var navA = $('nav a');
 
 $('document').ready(function(){
-    $('a').on('click', function(e){      
+    navA.on('click', function(e){      
         // отменяем стандартное действие при клике
         e.preventDefault();
        nav.fadeOut();
@@ -102,16 +101,33 @@ function getContent(url, addEntry) {
 
 
 
-
- $('nav a').on('click',function() {
+(function ToggleActiveMenu() {    
+    navA.on('click',function() {
         $('.activ').removeClass('activ');
         $(this).addClass('activ');
-    })
+    });
+}());
 
 
-
+// MY SETTINGS PRELOAD
 Pace.on('hide', function() {
    $('.pace-overlay').fadeOut();  
 });
 
+
+
+
+
+// TOUCH GALLERY
+(function links() {   
+    var links = document.getElementById('links');
+    links.addEventListener('click', function(event) {
+         event = event || window.event;
+    var target = event.target || event.srcElement,
+        link = target.src ? target.parentNode : target,
+        options = {index: link, event: event},
+        links = this.getElementsByTagName('a');
+    blueimp.Gallery(links, options);
+    });
+}());
 

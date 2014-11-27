@@ -10,28 +10,52 @@ block content
             div 
                 a.back-albums(href='gallery.html') назад к альбомам
                     i.fa.fa-caret-left
-            ul(data-liffect='zoomOut', class='thumb-gallery') 
-               div.box-items
-                   i.fa.fa-search
-                   a.fluidbox(href='/images/item2.jpg', width='800')                        
-                        img(src='/images/item2.jpg', width='300')
-                   section.item-price
-                       span Цена
-                       span.number-price 3600 руб.
-                       img.cart.cart-price(src='/images/cart.svg', width='20', height='20')
-               div       
-                   a.fluidbox(href='/images/item1.jpg', width='800')
-                        img(src='/images/item1.jpg', width='300')
-                   section
-                       p Цена
-               div       
-                   a.fluidbox(href='/images/item3.jpg', width='800')
-                        img(src='/images/item3.jpg', width='300')
-               div                                                   
-                   a.fluidbox(href='/images/item4.jpg', width='800')
-                        img(src='/images/item4.jpg', width='300')
-                      
-             
+                    // ul(data-liffect='zoomOut', class='thumb-gallery') 
+                       div.box-items                                     
+                   div#blueimp-gallery.blueimp-gallery
+                        div.slides
+                        h3.title
+                        a.prev
+                        a.next
+                        a.close ×
+                        a.play-pause
+                        ol.indicator"                 
+                   div#links
+                       ul(data-liffect='zoomOut')
+                           a(href="/images/item4.jpg" title="Banana")
+                                 li
+                                   img(src='/images/item4.jpg')
+                            a(href="/images/item2.jpg" title="Banana")
+                                 li
+                                   img(src='/images/item2.jpg')
+                            a(href="/images/item3.jpg" title="Banana")
+                                 li
+                                   img(src='/images/item3.jpg')
+                            a(href="/images/item4.jpg" title="Banana")
+                                 li
+                                   img(src='/images/item4.jpg')
+                            a(href="/images/item1.jpg" title="Banana")
+                                 li
+                                   img(src='/images/item1.jpg')
+                            
+               
+                       
+                           
+                       
+                       
+                   
+                   
+//-                   
+//-                        a(href="/images/item1.jpg" title="Banana")
+//-                            img(src="/images/item1.jpg" width="300" alt="Banana")
+//-              
+//-                        a(href="/images/item2.jpg" title="Apple")
+//-                             img(src="/images/item2.jpg" width="300" alt="Apple")
+//- 
+//-                        a(href="/images/item3.jpg" title="Orange")
+//-                             img(src="/images/item3.jpg" width="300" alt="Orange")
+//-  
+    
                        
                        
                        
