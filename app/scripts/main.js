@@ -67,7 +67,13 @@ $('document').ready(function(){
     navA.on('click', function(e){      
         // отменяем стандартное действие при клике
         e.preventDefault();
-       nav.fadeOut();
+//       nav.fadeOut();
+        var screen = $(window);
+        if(screen.width < 768) {
+            nav.fadeOut();
+        } else {
+                  nav.fadeIn(); 
+                     }
        toggleMenu.fadeOut();
        closeMenuNav.fadeOut();    
         // Получаем адрес страницы
@@ -88,7 +94,7 @@ window.addEventListener("popstate", function(e) {
 function getContent(url, addEntry) {
     $.get(url).done(function(data) {
         // Обновление только текстового содержимого 
-        $('.content').hide().html($(data).find(".content").html()).fadeIn(800,'swing');
+        $('.content').hide().html($(data).find('.content').html()).fadeIn(800,'swing');
        
         // Если был выполнен клик в меню - добавляем запись в стек истории сеанса
         // Если была нажата кнопка назад/вперед, добавлять записи в историю не надо
@@ -98,6 +104,8 @@ function getContent(url, addEntry) {
         }
     });
 }
+
+
 
 
 
