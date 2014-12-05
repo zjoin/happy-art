@@ -674,8 +674,20 @@ COMMENTS FORM
 }
 
 
+.blueimp-gallery {
+    padding: 2% 0;
+}
 
+.blueimp-gallery > .prev, .blueimp-gallery > .next {
+    border: 0;
+    opacity: 1;
+    background: none;
+    color: $beige;
+}
 
+.color-brown {
+    color: $brown;
+}
 
 @import 'components/media';
 

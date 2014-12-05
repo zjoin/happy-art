@@ -62,12 +62,33 @@ closeMenuNav.hide();
 
 
 var navA = $('nav a');
+var $window = $(window);
+
+$(window).on('resize', function() {
+    if ($window.width() < 768) {       
+         toggleMenu.fadeIn();
+         closeMenuNav.fadeIn();
+    } else {      
+        toggleMenu.fadeOut();
+        closeMenuNav.fadeOut();         
+    }
+});
+
+(function() {
+    if($window.width() < 768) {
+         navA.addClass('color-brown');
+    } else {
+         navA.removeClass('color-brown');
+    }
+})();
+
+
 
 $('document').ready(function(){
     navA.on('click', function(e){      
         // отменяем стандартное действие при клике
         e.preventDefault();
-//       nav.fadeOut();
+       nav.fadeOut();
         var screen = $(window);
         if(screen.width < 768) {
             nav.fadeOut();
