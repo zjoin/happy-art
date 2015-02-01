@@ -28,7 +28,7 @@
   
   -->
   <!-- Icon font for Ionic Framework CDN-->
-  <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
+  <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <!-- Latest compiled and minified CSS  CDN-->
   <!-- link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')  -->
@@ -37,13 +37,14 @@
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-  <div class="pace-overlay"></div>
+  <div class="pace-overlay">       </div>
+  <div class="toggle-menu"></div>
   <div class="container animsition">
     <div class="loader"> 
       <loader></loader>
     </div>
-    <div class="qaz"><i class="icon ion-close m-close-menu"></i></div>
-    <section class="menu"><i class="fa fa-navicon"></i>
+    <div class="toggle-menu">          </div>
+    <section class="menu"><i class="fa fa-navicon"></i><i class="icon ion-close m-close-menu"></i>
       <div class="basket"><img data-modal-id="basket" src="/images/cart.svg" width="32" height="32" class="cart modal-trigger">
         <section class="basket-counter"><span>4</span><span>| 700$</span></section>
         <p class="checkout">оформить заказ     </p>
@@ -67,6 +68,8 @@
     <section class="content">
       <video autoplay="autoplay" loop="loop" poster="" id="my-video">
         <source src="/images/cloud.mp4" type="video/mp4">
+        <source src="/images/cloud.webm" type="video/webm">
+        <source src="/images/cloud.ogv" type="video/ogg">
       </video><a href="">
         <h1 data-scroll-reveal="data-scroll-reveal=&quot;enter from the bottom after 1s">GHappy art</h1></a>
       <blockquote> 
@@ -103,11 +106,13 @@
   </div>
   <script src="//cdn.jsdelivr.net/jquery/2.1.1/jquery.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-  <script src="/scripts/fluidbox.js"> </script>
+  <!-- script(src='/scripts/fluidbox.js') -->
   <!-- script(src='/scripts/jquery.animsition.js')-->
   <script src="/scripts/scrollReveal.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.5.1/jquery.nicescroll.js">  </script>
   <script src="/scripts/pace.js">  </script>
+  <script src="/scripts/classie.js">  </script>
+  <script src="/scripts/blueimp-gallery.js">  </script>
   <script src="/scripts/main.js">
     <!--Latest compiled and minified JavaScript CDN    -->
   </script>

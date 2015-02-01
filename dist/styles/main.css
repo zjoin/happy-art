@@ -1,3 +1,4 @@
+@charset 'UTF-8';
 @import url(http://fonts.googleapis.com/css?family=Philosopher:400,700&subset=latin,cyrillic);
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 /**
@@ -462,6 +463,85 @@ body
     height: 100%;
 }
 
+.fluidbox
+{
+    outline: none;
+}
+
+.hidden
+{
+    display: none;
+}
+
+.fluidbox-overlay
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    cursor: pointer;
+    cursor: -webkit-zoom-out;
+    -webkit-transition: all .25s ease-in-out;
+         -o-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out; 
+
+    opacity: 0;
+    background-color: rgba(255, 255, 255, .85);
+}
+
+.fluidbox-wrap
+{
+    position: relative;
+
+    margin: 0 auto;
+
+    -webkit-transition: all .25s ease-in-out;
+         -o-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out; 
+
+    background-position: center center;
+    -webkit-background-size: cover;
+            background-size: cover;
+}
+
+.fluidbox-ghost
+{
+    position: absolute;
+
+    -webkit-transition: all .25s ease-in-out;
+         -o-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out; 
+
+    background-position: center center;
+    -webkit-background-size: cover;
+            background-size: cover;
+}
+
+.fluidbox-closed .fluidbox-ghost
+{
+    -webkit-transition-delay: 0, 0, .25s, 0;
+         -o-transition-delay: 0, 0, .25s, 0;
+            transition-delay: 0, 0, .25s, 0; 
+    -webkit-transition-property: top, left, opacity, -webkit-transform;
+         -o-transition-property: top, left, opacity, -o-transform;
+            transition-property: top, left, opacity, transform;
+}
+
+.fluidbox-closed .fluidbox-wrap img
+{
+    -webkit-transition-delay: .25s;
+         -o-transition-delay: .25s;
+            transition-delay: .25s;
+    -webkit-transition-duration: 0s;
+         -o-transition-duration: 0s;
+            transition-duration: 0s; 
+    -webkit-transition-property: opacity;
+         -o-transition-property: opacity;
+            transition-property: opacity;
+}
+
 /* This is a compiled file, you should be editing the file in the templates directory */
 .pace
 {
@@ -603,6 +683,313 @@ body
     }
 }
 
+/*
+ * blueimp Gallery CSS 2.11.1
+ * https://github.com/blueimp/Gallery
+ *
+ * Copyright 2013, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
+.blueimp-gallery,
+.blueimp-gallery > .slides > .slide > .slide-content
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* Prevent artifacts in Mozilla Firefox: */
+
+    -moz-backface-visibility: hidden;
+}
+
+.blueimp-gallery > .slides > .slide > .slide-content
+{
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    margin: auto;
+
+    opacity: 1;
+}
+
+.blueimp-gallery
+{
+    position: fixed;
+    z-index: 999999;
+
+    display: none;
+    overflow: hidden;
+
+    opacity: 0;
+    background: #000;
+    background: rgba(0, 0, 0, .9);
+
+    direction: ltr;
+    -ms-touch-action: none;
+        touch-action: none;
+}
+
+.blueimp-gallery-carousel
+{
+    position: relative;
+    z-index: auto;
+
+    margin: 1em auto;
+    /* Set the carousel width/height ratio to 16/9: */
+    padding-bottom: 56.25%;
+
+    -webkit-box-shadow: 0 0 10px #000;
+            box-shadow: 0 0 10px #000;
+
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+}
+
+.blueimp-gallery-display
+{
+    display: block;
+
+    opacity: 1;
+}
+
+.blueimp-gallery > .slides
+{
+    position: relative;
+
+    overflow: hidden; 
+
+    height: 100%;
+}
+
+.blueimp-gallery-carousel > .slides
+{
+    position: absolute;
+}
+
+.blueimp-gallery > .slides > .slide
+{
+    position: relative;
+
+    float: left;
+
+    height: 100%;
+
+    -webkit-transition-timing-function: cubic-bezier(.645, .045, .355, 1);
+         -o-transition-timing-function: cubic-bezier(.645, .045, .355, 1);
+            transition-timing-function: cubic-bezier(.645, .045, .355, 1); 
+    text-align: center;
+}
+
+.blueimp-gallery,
+.blueimp-gallery > .slides > .slide > .slide-content
+{
+    -webkit-transition: opacity .5s linear;
+         -o-transition: opacity .5s linear;
+            transition: opacity .5s linear;
+}
+
+.blueimp-gallery > .slides > .slide-loading
+{
+    background: url(../img/loading.gif) center no-repeat;
+    -webkit-background-size: 64px 64px;
+            background-size: 64px 64px;
+}
+
+.blueimp-gallery > .slides > .slide-loading > .slide-content
+{
+    opacity: 0;
+}
+
+.blueimp-gallery > .slides > .slide-error
+{
+    background: url(../img/error.png) center no-repeat;
+}
+
+.blueimp-gallery > .slides > .slide-error > .slide-content
+{
+    display: none;
+}
+
+.blueimp-gallery > .prev,
+.blueimp-gallery > .next
+{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 60px;
+    font-weight: 100;
+    line-height: 30px;
+
+    position: absolute;
+    top: 50%;
+    left: 15px;
+
+    display: none; 
+
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+    width: 40px;
+    height: 40px;
+    margin-top: -23px;
+
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+
+    opacity: .5;
+    color: #fff;
+    border: 3px solid #fff;
+    border-radius: 23px;
+    background: #222;
+    background: rgba(0, 0, 0, .5);
+    text-shadow: 0 0 2px #000;
+}
+
+.blueimp-gallery > .next
+{
+    right: 15px; 
+    left: auto;
+}
+
+.blueimp-gallery > .close,
+.blueimp-gallery > .title
+{
+    font-size: 20px;
+    line-height: 30px;
+
+    position: absolute;
+    top: 15px;
+    left: 15px;
+
+    display: none; 
+
+    margin: 0 40px 0 0;
+
+    opacity: .8;
+    color: #fff;
+    text-shadow: 0 0 2px #000;
+}
+
+.blueimp-gallery > .close
+{
+    font-size: 30px;
+
+    right: 15px;
+    left: auto;
+
+    margin: -15px;
+    padding: 15px;
+
+    cursor: pointer; 
+    text-decoration: none;
+}
+
+.blueimp-gallery > .play-pause
+{
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+
+    display: none; 
+
+    width: 15px;
+    height: 15px;
+
+    cursor: pointer;
+
+    opacity: .5;
+    background: url(../img/play-pause.png) 0 0 no-repeat;
+}
+
+.blueimp-gallery-playing > .play-pause
+{
+    background-position: -15px 0;
+}
+
+.blueimp-gallery > .prev:hover,
+.blueimp-gallery > .next:hover,
+.blueimp-gallery > .close:hover,
+.blueimp-gallery > .title:hover,
+.blueimp-gallery > .play-pause:hover
+{
+    opacity: 1; 
+    color: #fff;
+}
+
+.blueimp-gallery-controls > .prev,
+.blueimp-gallery-controls > .next,
+.blueimp-gallery-controls > .close,
+.blueimp-gallery-controls > .title,
+.blueimp-gallery-controls > .play-pause
+{
+    display: block;
+    /* Fix z-index issues (controls behind slide element) on Android: */
+
+    -webkit-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+         -o-transform: translateZ(0);
+            transform: translateZ(0);
+}
+
+.blueimp-gallery-single > .prev,
+.blueimp-gallery-left > .prev,
+.blueimp-gallery-single > .next,
+.blueimp-gallery-right > .next,
+.blueimp-gallery-single > .play-pause
+{
+    display: none;
+}
+
+.blueimp-gallery > .slides > .slide > .slide-content,
+.blueimp-gallery > .prev,
+.blueimp-gallery > .next,
+.blueimp-gallery > .close,
+.blueimp-gallery > .play-pause
+{
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; 
+
+     -khtml-user-select: none;
+}
+
+/* Replace PNGs with SVGs for capable browsers (excluding IE<9) */
+body:last-child .blueimp-gallery > .slides > .slide-error
+{
+    background-image: url(../img/error.svg);
+}
+
+body:last-child .blueimp-gallery > .play-pause
+{
+    width: 20px;
+    height: 20px;
+
+    background-image: url(../img/play-pause.svg); 
+    -webkit-background-size: 40px 20px;
+            background-size: 40px 20px;
+}
+
+body:last-child .blueimp-gallery-playing > .play-pause
+{
+    background-position: -20px 0;
+}
+
+/* IE7 fixes */
+* + html .blueimp-gallery > .slides > .slide
+{
+    min-height: 300px;
+}
+
+* + html .blueimp-gallery > .slides > .slide > .slide-content
+{
+    position: relative;
+}
+
 body
 {
     font-size: 1.4rem;
@@ -634,10 +1021,12 @@ body
 .pace-overlay
 {
     position: fixed;
-    z-index: 2; 
+    z-index: 2;
 
     width: 100%;
     height: 100%;
+
+    text-align: center; 
 
     background: #f6e9e0;
 }
@@ -999,7 +1388,7 @@ nav li span
 
     position: absolute;
     top: 10px;
-    left: -5px;
+    left: 10px;
 
     display: none;
 }
@@ -1152,12 +1541,6 @@ address span
     color: #f6e9e0;
 }
 
-.box-apps
-{
-    padding-left: 10px; 
-
-    border-left: 2px solid;
-}
 .box-apps a:first-child
 {
     margin-right: 10px;
@@ -1174,9 +1557,10 @@ ul[data-liffect='zoomOut']
     margin-top: 40px;
     padding: 0 0;
 
-    -webkit-justify-content: space-around;
-    -ms-flex-pack: distribute;
-            justify-content: space-around;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+            justify-content: center;
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
@@ -1270,17 +1654,6 @@ ul[data-liffect='zoomOut'] figcaption p
     color: #f6e9e0;
 }
 
-figcaption i,
-figcaption h2,
-figcaption p
-{
-    -webkit-transition: all .4s;
-         -o-transition: all .4s;
-            transition: all .4s;
-    -webkit-transform: translate3d(0, 200%, 0);
-            transform: translate3d(0, 200%, 0);
-}
-
 ul[data-liffect='zoomOut'] li:hover p
 {
     opacity: 1;
@@ -1354,12 +1727,7 @@ ul[data-liffect='zoomOut'] li
     overflow: hidden;
 
     width: 350px;
-    margin: 1vw; 
-
-    -webkit-box-flex: 1;
-    -webkit-flex: auto;
-        -ms-flex: auto;
-            flex: auto;
+    margin: 1vw;
 }
 
 ul[data-liffect='zoomOut'].play li
@@ -1372,7 +1740,6 @@ ul[data-liffect='zoomOut'].play li
 ul[data-liffect='zoomOut'] img
 {
     width: 100%;
-    height: auto;
 }
 
 @-webkit-keyframes zoomOut
@@ -1437,6 +1804,17 @@ ul[data-liffect='zoomOut'] img
 .thumb-gallery.play li
 {
     overflow: visible;
+}
+
+figcaption i,
+figcaption h2,
+figcaption p
+{
+    -webkit-transition: all .4s;
+         -o-transition: all .4s;
+            transition: all .4s;
+    -webkit-transform: translate3d(0, 200%, 0);
+            transform: translate3d(0, 200%, 0);
 }
 
 .back-albums
@@ -1532,20 +1910,174 @@ ul[data-liffect='zoomOut'] img
 {
     width: 300px;
 }
-
-@media all and (max-height: 500px)
+.we figcaption
 {
-    .social-icons
-    {
-        display: none;
-    }
+    font-size: 2rem;
+}
+.we section
+{
+    overflow: hidden; 
+
+    height: 5rem;
+}
+.we section p
+{
+    padding: 1rem; 
+
+    background: #78b3a0;
 }
 
+/***************************************\
+
+COMMENTS FORM
+
+\****************************************/
+.contacts
+{
+    margin: 5rem 0 0 0;
+    padding: 0 10rem;
+    /* FF 4-18 */
+    /* FF 19+ */
+    /* IE 10+ */
+}
+.contacts input,
+.contacts textarea
+{
+    width: 100%; 
+    margin: 1rem 0;
+    padding: 1.5rem;
+
+    border: 0;
+}
+.contacts input:focus::-webkit-input-placeholder
+{
+    color: transparent;
+}
+.contacts input:focus:-moz-placeholder
+{
+    color: transparent;
+}
+.contacts input:focus::-moz-placeholder
+{
+    color: transparent;
+}
+.contacts input:focus:-ms-input-placeholder
+{
+    color: transparent;
+}
+.contacts .send
+{
+    -webkit-transition: all .3s cubic-bezier(1, .05, .19, 1.07);
+         -o-transition: all .3s cubic-bezier(1, .05, .19, 1.07);
+            transition: all .3s cubic-bezier(1, .05, .19, 1.07); 
+
+    color: #f6e9e0;
+    background: #54403f;
+}
+.contacts .send:hover
+{
+    background: #372a29;
+}
+
+.toggle-menu
+{
+    position: fixed;
+    z-index: 8;
+    top: 0;
+    left: 0;
+
+    display: none; 
+
+    width: 100%;
+    height: 100%;
+
+    background: #78b3a0;
+}
+
+.opac
+{
+    opacity: .1;
+}
+
+.m-close-menu
+{
+    font-size: 2em;
+
+    position: absolute;
+    z-index: 11; 
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    margin: 3px 0 0 10px;
+
+    cursor: pointer;
+
+    color: #f6e9e0;
+}
+
+.blueimp-gallery
+{
+    padding: 2% 0;
+}
+
+.blueimp-gallery > .prev,
+.blueimp-gallery > .next
+{
+    opacity: 1;
+    color: #f6e9e0; 
+    border: 0;
+    background: none;
+}
+
+.color-brown
+{
+    color: #54403f;
+}
+
+/***************************************\
+
+BLOCK MEDIA QUERIS
+
+\****************************************/
 @media screen and (max-width: 1440px)
 {
     .modal
     {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 1465px)
+{
+    ul[data-liffect='zoomOut'] li
+    {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 1306px)
+{
+    ul[data-liffect='zoomOut'] li
+    {
+        width: 280px;
+    }
+}
+
+@media screen and (max-width: 1242px)
+{
+    ul[data-liffect='zoomOut'] li
+    {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 1174px)
+{
+    ul[data-liffect='zoomOut'] li
+    {
+        width: 380px;
     }
 }
 
@@ -1560,13 +2092,11 @@ ul[data-liffect='zoomOut'] img
         -webkit-flex-direction: column;
             -ms-flex-direction: column;
     }
-
     .menu,
     .content
     {
         width: 100%;
     }
-
     .menu
     {
         position: static;
@@ -1584,34 +2114,28 @@ ul[data-liffect='zoomOut'] img
         -ms-flex-pack: end;
                 justify-content: flex-end;
     }
-
     .modal
     {
         width: 100%;
     }
-
     .modal-overlay
     {
         background: white;
     }
-
     .modal-show .modal-overlay
     {
         opacity: 1;
     }
-
     .modal-content .form-close
     {
         left: 80%; 
 
         color: #54403f;
     }
-
     nav
     {
         margin-top: 0;
     }
-
     nav ul
     {
         display: -webkit-box;
@@ -1619,21 +2143,18 @@ ul[data-liffect='zoomOut'] img
         display: -ms-flexbox;
         display:         flex;
     }
-
     .content
     {
         margin-left: 0; 
 
         border-right: none;
     }
-
     h1
     {
         font-size: 11em;
 
         margin-top: 0;
     }
-
     .social-icons
     {
         position: absolute;
@@ -1652,24 +2173,20 @@ ul[data-liffect='zoomOut'] img
     {
         margin-right: 20px;
     }
-
     nav
     {
         position: absolute;
         top: 0;
         left: 20px;
     }
-
     nav ul
     {
         margin: 0;
     }
-
     nav li
     {
         margin-right: 20px;
     }
-
     .basket
     {
         margin: 0;
@@ -1679,22 +2196,72 @@ ul[data-liffect='zoomOut'] img
         -ms-flex-item-align: start;
                 align-self: flex-start;
     }
-
     .basket-counter
     {
         margin-left: 20px;
         padding: 5px 40px;
     }
-
     address,
-    .subcribe
+    .subcribe,
+    .social-icons
     {
         display: none;
     }
-
     .checkout
     {
         display: none;
+    }
+    ul[data-liffect='zoomOut'] li
+    {
+        width: 320px;
+    }
+}
+
+@media screen and (max-width: 1150px)
+{
+    ul[data-liffect='zoomOut'] li
+    {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 1000px)
+{
+    ul[data-liffect='zoomOut'] li
+    {
+        width: 280px;
+    }
+}
+
+@media screen and (max-width: 950px)
+{
+    ul[data-liffect='zoomOut'] li
+    {
+        width: 260px;
+    }
+}
+
+@media screen and (max-width: 880px)
+{
+    ul[data-liffect='zoomOut'] li
+    {
+        width: 240px;
+    }
+}
+
+@media screen and (max-width: 800px)
+{
+    ul[data-liffect='zoomOut'] li
+    {
+        width: 225px;
+    }
+}
+
+@media screen and (max-width: 750px)
+{
+    ul[data-liffect='zoomOut'] li
+    {
+        width: 210px;
     }
 }
 
@@ -1704,26 +2271,23 @@ ul[data-liffect='zoomOut'] img
     {
         font-size: 8em;
     }
-
     nav
     {
-        z-index: 5; 
+        z-index: 10; 
         top: 50%;
         left: 50%;
 
         display: none;
 
-        -webkit-transform: translate(-50px, -50px);
-            -ms-transform: translate(-50px, -50px);
-             -o-transform: translate(-50px, -50px);
-                transform: translate(-50px, -50px);
+        -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+             -o-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
     }
-
-    nav a:before
+    nav li a
     {
-        color: #54403f;
+        color: #f6e9e0 !important;
     }
-
     nav ul
     {
                 flex-direction: column; 
@@ -1733,7 +2297,6 @@ ul[data-liffect='zoomOut'] img
         -webkit-flex-direction: column;
             -ms-flex-direction: column;
     }
-
     .fa.fa-navicon
     {
         display: block;
@@ -1742,11 +2305,11 @@ ul[data-liffect='zoomOut'] img
     }
 }
 
-@media screen and (max-width: 423px)
+@media screen and (min-width: 767px)
 {
-    h1
+    nav
     {
-        font-size: 6em;
+        display: block !important;
     }
 }
 
@@ -1758,33 +2321,77 @@ ul[data-liffect='zoomOut'] img
     }
 }
 
-.qaz
+@media screen and (max-width: 700px)
 {
-    position: absolute;
-    z-index: 5;
-    top: 0;
-    left: 0;
-
-    display: none; 
-
-    width: 100%;
-    height: 100%;
-
-    background: #f6e9e0;
+    ul[data-liffect='zoomOut'] li
+    {
+        width: 300px;
+    }
 }
 
-.opac
+@media screen and (max-width: 650px)
 {
-    opacity: .1;
+    ul[data-liffect='zoomOut'] li
+    {
+        width: 180px;
+    }
 }
 
-.m-close-menu
+@media screen and (max-width: 600px)
 {
-    font-size: 2em;
+    ul[data-liffect='zoomOut'] li
+    {
+        width: 180px;
+        margin: 5vw;
+    }
+}
 
-    display: inline-block;
+@media screen and (max-width: 480px)
+{
+    ul[data-liffect='zoomOut'] li
+    {
+        width: 160px;
+        margin: 5vw;
+    }
+}
 
-    margin: 3px 0 0 3px;
+@media screen and (max-width: 390px)
+{
+    ul[data-liffect='zoomOut'] li
+    {
+        width: 130px;
+        margin: 5vw;
+    }
+}
 
-    cursor: pointer;
+@media screen and (max-width: 330px)
+{
+    ul[data-liffect='zoomOut'] li
+    {
+        width: 100px;
+        margin: 5vw;
+    }
+}
+
+@media all and (max-height: 500px)
+{
+    .social-icons
+    {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 423px)
+{
+    h1.logo-in-gallery,
+    h1
+    {
+        font-size: 7rem;
+
+        padding-top: 30px;
+    }
+    ul[data-liffect='zoomOut']
+    {
+        margin-top: 15px;
+    }
 }

@@ -28,7 +28,7 @@
   
   -->
   <!-- Icon font for Ionic Framework CDN-->
-  <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
+  <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <!-- Latest compiled and minified CSS  CDN-->
   <!-- link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')  -->
@@ -37,9 +37,10 @@
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-  <div class="pace-overlay"></div>
+  <div class="pace-overlay">       </div>
+  <div class="toggle-menu"></div>
   <div class="container">
-    <section class="menu"><i class="fa fa-navicon"></i>
+    <section class="menu"><i class="fa fa-navicon"></i><i class="icon ion-close m-close-menu"></i>
       <div class="basket"><img data-modal-id="basket" src="/images/cart.svg" width="32" height="32" class="cart modal-trigger">
         <section class="basket-counter"><span>4</span><span>| 700$</span></section>
         <p class="checkout">оформить заказ     </p>
@@ -89,28 +90,36 @@
         </div>
       </div><a href="">
         <h1 class="logo-in-gallery into-gallery">GHappy art</h1></a>
-      <div> <a href="gallery.html" class="back-albums">назад к альбомам<i class="fa fa-caret-left"></i></a></div>
-      <ul data-liffect="zoomOut" class="thumb-gallery"> 
-        <div class="box-items"><i class="fa fa-search"></i><a href="/images/item2.jpg" width="800" class="fluidbox">                       <img src="/images/item2.jpg" width="300"></a>
-          <section class="item-price"><span>Цена</span><span class="number-price">3600 руб.</span><img src="/images/cart.svg" width="20" height="20" class="cart cart-price"></section>
+      <div> <a href="gallery.html" class="back-albums">назад к альбомам<i class="fa fa-caret-left"></i>
+          <!-- ul(data-liffect='zoomOut', class='thumb-gallery') div.box-items                                     
+          --></a>
+        <div id="blueimp-gallery" class="blueimp-gallery">
+          <div class="slides"></div>
+          <h3 class="title"></h3><a class="prev"><i class="icon ion-ios-arrow-left"></i></a><a class="next"><i class="icon ion-ios-arrow-right"></i></a><a class="close"><i class="close ion-close"></i></a><a class="play-pause"></a>
+          <ol class="indicator">"                 </ol>
         </div>
-        <div>      <a href="/images/item1.jpg" width="800" class="fluidbox"><img src="/images/item1.jpg" width="300"></a>
-          <section>
-            <p>Цена</p>
-          </section>
+        <div id="links">
+          <ul data-liffect="zoomOut"><a href="/images/item4.jpg" title="Banana">
+              <li>
+                <div><img src="/images/item4.jpg"></div>
+              </li></a><a href="/images/item4.jpg" title="Banana">
+              <li><img src="/images/item2.jpg"></li></a><a href="/images/item2.jpg" title="Banana">
+              <li><img src="/images/item3.jpg"></li></a><a href="/images/item3.jpg" title="Banana">
+              <li><img src="/images/item4.jpg"></li></a><a href="/images/item4.jpg" title="Banana">
+              <li><img src="/images/item1.jpg"></li></a></ul>
         </div>
-        <div>      <a href="/images/item3.jpg" width="800" class="fluidbox"><img src="/images/item3.jpg" width="300"></a></div>
-        <div>                                                  <a href="/images/item4.jpg" width="800" class="fluidbox"><img src="/images/item4.jpg" width="300"></a></div>
-      </ul>
+      </div>
     </section>
   </div>
   <script src="//cdn.jsdelivr.net/jquery/2.1.1/jquery.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-  <script src="/scripts/fluidbox.js"> </script>
+  <!-- script(src='/scripts/fluidbox.js') -->
   <!-- script(src='/scripts/jquery.animsition.js')-->
   <script src="/scripts/scrollReveal.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.5.1/jquery.nicescroll.js">  </script>
   <script src="/scripts/pace.js">  </script>
+  <script src="/scripts/classie.js">  </script>
+  <script src="/scripts/blueimp-gallery.js">  </script>
   <script src="/scripts/main.js">
     <!--Latest compiled and minified JavaScript CDN    -->
   </script>
