@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang=""></html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Happy art</title>
+  <!--Add to homescreen for Chrome on Android 
+  -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+  <!--Add to homescreen for Safari on iOS 
+  -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+  <link rel="apple-touch-icon-precomposed" href="images/touch/apple-touch-icon-precomposed.png">
+  <!--Tile icon for Win8 (144x144 + tile color) 
+  -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
+  <!--SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones 
+  -->
+  <!--
+  <link rel="canonical" href="http://www.example.com/">
+  
+  
+  -->
+  <!-- Icon font for Ionic Framework CDN-->
+  <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Latest compiled and minified CSS  CDN-->
+  <!-- link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')  -->
+  <!--Page styles      
+  -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <div class="pace-overlay"></div>
+  <div class="container">
+    <section class="menu"><i class="fa fa-navicon"></i>
+      <div class="basket"><img data-modal-id="basket" src="/images/cart.svg" width="32" height="32" class="cart modal-trigger">
+        <section class="basket-counter"><span>4</span><span>| 700$</span></section>
+        <p class="checkout">оформить заказ     </p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/index.html" data-hover="Главная" class="activ">  Главная</a></li>
+          <li><a href="/gallery.html" data-hover="Галерея">Галерея</a></li>
+          <li><a href="/about.html" data-hover="О нас">  О нас</a></li>
+          <li><a href="/contact.html" data-hover="Контакты">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="subcribe">
+        <p>Subcribe</p>
+      </div>
+      <address>Санкт-Петербург<br>Б. Казачий пер. 6<br><span>8(921) 566 08 39</span></address>
+      <div class="social-icons"><a href=""><i class="fa fa-vk fa-2x"></i></a><a href=""><i class="fa fa-facebook fa-2x"></i></a><a href=""><i class="fa fa-twitter fa-2x"></i></a><a href=""><i class="fa fa-skype fa-2x"></i></a>
+        <div class="box-apps"> <a href=""><i class="fa fa-apple fa-2x"> </i></a><a href=""><i class="fa fa-android fa-2x">  </i></a></div>
+      </div>
+    </section>
+    <section class="content">
+      <div id="basket" data-modal-effect="fadescale" class="modal">
+        <div class="modal-content">
+          <h2>Корзина</h2>
+          <section class="basket-list">                       
+            <table>                          
+              <tr>                               
+                <th>Наименование</th>
+                <th>Количество</th>
+                <th>Цена</th>
+                <th>Сумма</th>
+              </tr>
+              <tr>
+                <td> <img src="/images/item3.jpg" width="100">
+                  <p>Топиарии   </p>
+                </td>
+                <td> <span>2    </span></td>
+                <td> <span>1500</span></td>
+                <td> <span>1500                                    </span></td>
+              </tr>
+              <tr>
+                <td colspan="4" class="total"> <span>Итого<em>1500</em><i class="fa fa-rub"></i></span></td>
+              </tr>
+            </table>
+          </section>
+          <section><i class="icon ion-close form-close modal-close"></i></section>
+        </div>
+      </div><a href="">
+        <h1 class="logo-in-gallery">GHappy art</h1></a>
+      <ul data-liffect="zoomOut">              
+        <li><a href="/album-topi.html"><img src="/images/item2.jpg">
+            <figcaption>
+              <h2>Топиарии</h2>
+              <p>просто какой-то текст</p>
+              <div class="icons"><i class="fa fa-eye"></i><i class="fa fa-heart-o">                         </i></div>
+            </figcaption></a></li>
+        <li><img src="/images/item2.jpg">
+          <figcaption>
+            <h2>Оформление подарков</h2>
+            <p>just some text</p>
+            <div class="icons"><i class="fa fa-eye"></i><i class="fa fa-heart-o"></i></div>
+          </figcaption>
+        </li>
+        <li><img src="/images/item3.jpg">
+          <figcaption>
+            <h2>Топиарии</h2>
+            <p>just some text</p>
+            <div class="icons"><i class="fa fa-eye"></i><i class="fa fa-heart-o"></i></div>
+          </figcaption>
+        </li>
+        <li><img src="/images/item4.jpg">
+          <figcaption>
+            <h2>Топиарии</h2>
+            <p>just some text</p>
+            <div class="icons"><i class="fa fa-eye"></i><i class="fa fa-heart-o"></i></div>
+          </figcaption>
+        </li>
+        <li><img src="/images/item2.jpg"></li>
+        <li><img src="/images/item1.jpg"></li>
+        <li><img src="/images/item3.jpg"></li>
+        <li><img src="/images/item4.jpg"></li>
+        <li><img src="/images/item2.jpg"></li>
+        <li><img src="/images/item1.jpg"></li>
+        <li><img src="/images/item3.jpg"></li>
+        <li><img src="/images/item4.jpg"></li>
+        <li><img src="/images/item2.jpg"></li>
+        <li><img src="/images/item1.jpg"></li>
+        <li><img src="/images/item3.jpg"></li>
+        <li><img src="/images/item4.jpg"></li>
+      </ul>
+    </section>
+  </div>
+  <script src="//cdn.jsdelivr.net/jquery/2.1.1/jquery.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script src="/scripts/fluidbox.js"> </script>
+  <!-- script(src='/scripts/jquery.animsition.js')-->
+  <script src="/scripts/scrollReveal.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.5.1/jquery.nicescroll.js">  </script>
+  <script src="/scripts/pace.js">  </script>
+  <script src="/scripts/main.js">
+    <!--Latest compiled and minified JavaScript CDN    -->
+  </script>
+  <!-- script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')-->
+</body>
